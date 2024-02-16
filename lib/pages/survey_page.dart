@@ -46,6 +46,7 @@ class SurveyPage extends StatelessWidget {
                       children: [
                         AvailableAndFilter(),
                         SurveyCard(on_details: survey_controler.view_survey_details, on_start: survey_controler.start_survey),
+                        SurveyCard(on_details: survey_controler.view_survey_details, on_start: survey_controler.start_survey),
                       ],
                     ),
                   ),

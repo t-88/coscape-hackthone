@@ -39,6 +39,6 @@ class SurveyQuestionsControler extends GetxController {
 
   void submit_data() {
     Get.toNamed(Routes.surveys_page);
-    Get.snackbar("Success", "Your response have been sent");
+    Get.snackbar("Thank you", "Your response have been successfully sent");
   }
 }
