@@ -1,9 +1,11 @@
 import 'package:coscape_mobile/components/wraped_drawer.dart';
 import 'package:coscape_mobile/consts/routes.dart';
 import 'package:coscape_mobile/pages/done_page.dart';
+import 'package:coscape_mobile/pages/my_money_page.dart';
 import 'package:coscape_mobile/pages/profile_page.dart';
 import 'package:coscape_mobile/pages/survey_page.dart';
 import 'package:coscape_mobile/pages/survey_questions_page.dart';
+import 'package:coscape_mobile/pages/transacation_page.dart';
 import 'package:coscape_mobile/state/survey_controler.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -32,10 +34,13 @@ class MyApp extends StatelessWidget {
         Routes.survey_questions_page: (ctx) => SurveyQuestionsPage(),
         Routes.done_page: (ctx) => DonePage(),
         Routes.profile_page: (ctx) => ProfilePage(),
+        Routes.my_money_page: (ctx) => MyMoneyPage(),
+        Routes.transacation_page: (ctx) => TransactionPage(),
+        
         
       },
-      initialRoute: Routes.profile_page,
-      home: WrapedDrawer(widget: ProfilePage()),
+      initialRoute: Routes.my_money_page,
+      home: WrapedDrawer(widget: MyMoneyPage()),
           
     );
   }

@@ -24,15 +24,7 @@ class ProfilePage extends StatelessWidget {
               ],
             ),
           ),
-          Positioned(
-            child: Container(
-              child: Column(
-                children: [
-                  // Text(data)
-                ],
-              ),
-            ),
-          ),
+         
           Column(
             children: [
               CustomAppBar(
