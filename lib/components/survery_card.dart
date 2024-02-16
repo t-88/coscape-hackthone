@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 class SurveyCard extends StatelessWidget {
   final Function on_details;
   final Function on_start;
-  const SurveyCard({
+  SurveyCard({
     super.key,
     required this.on_details,
     required this.on_start,
@@ -90,23 +90,22 @@ class SurveyCard extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                         Row(
-                            children: [
-                              SvgPicture.asset(
-                                "assets/humbleicons_money.svg",
-                                height: 20,
+                        Row(
+                          children: [
+                            SvgPicture.asset(
+                              "assets/humbleicons_money.svg",
+                              height: 20,
+                            ),
+                            SizedBox(width: 5),
+                            Text(
+                              "2.1 min",
+                              textAlign: TextAlign.end,
+                              style: TextStyle(
+                                color: AppColors.BlueColor,
+                                fontSize: 10,
                               ),
-                              SizedBox(width: 5),
-                              Text(
-                                
-                                "2.1 min",
-                                textAlign: TextAlign.end,
-                                style: TextStyle(
-                                  color: AppColors.BlueColor,
-                                  fontSize: 10,
-                                ),
-                              ),
-                            ],
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -140,7 +139,8 @@ class SurveyCard extends StatelessWidget {
                   ],
                 ),
               ),
-            )
+            ),
+            SizedBox(width: 0),
           ],
         ),
       ),

@@ -1,6 +1,7 @@
 import 'package:coscape_mobile/components/wraped_drawer.dart';
 import 'package:coscape_mobile/consts/routes.dart';
 import 'package:coscape_mobile/pages/done_page.dart';
+import 'package:coscape_mobile/pages/profile_page.dart';
 import 'package:coscape_mobile/pages/survey_page.dart';
 import 'package:coscape_mobile/pages/survey_questions_page.dart';
 import 'package:coscape_mobile/state/survey_controler.dart';
@@ -30,10 +31,11 @@ class MyApp extends StatelessWidget {
         Routes.surveys_page: (ctx) => WrapedDrawer(widget: SurveyPage()),
         Routes.survey_questions_page: (ctx) => SurveyQuestionsPage(),
         Routes.done_page: (ctx) => DonePage(),
+        Routes.profile_page: (ctx) => ProfilePage(),
         
       },
-      initialRoute: Routes.done_page,
-      home: WrapedDrawer(widget: DonePage()),
+      initialRoute: Routes.profile_page,
+      home: WrapedDrawer(widget: ProfilePage()),
           
     );
   }
