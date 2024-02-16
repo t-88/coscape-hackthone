@@ -4,6 +4,7 @@ import 'package:coscape_mobile/pages/done_page.dart';
 import 'package:coscape_mobile/pages/my_money_page.dart';
 import 'package:coscape_mobile/pages/notification_page.dart';
 import 'package:coscape_mobile/pages/profile_page.dart';
+import 'package:coscape_mobile/pages/setting_page.dart';
 import 'package:coscape_mobile/pages/survey_page.dart';
 import 'package:coscape_mobile/pages/survey_questions_page.dart';
 import 'package:coscape_mobile/pages/transacation_page%20copy.dart';
@@ -38,11 +39,12 @@ class MyApp extends StatelessWidget {
         Routes.my_money_page: (ctx) => MyMoneyPage(),
         Routes.transacation_page: (ctx) => TransactionPage(),
         Routes.notification_page: (ctx) => NotificationPage(),
+        Routes.setting_page: (ctx) => SettingPage(),
         
         
       },
-      initialRoute: Routes.my_money_page,
-      home: WrapedDrawer(widget: MyMoneyPage()),
+      initialRoute: Routes.setting_page,
+      home: WrapedDrawer(widget: SettingPage()),
           
     );
   }
