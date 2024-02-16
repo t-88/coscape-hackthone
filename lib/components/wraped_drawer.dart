@@ -51,13 +51,18 @@ class WrapedDrawer extends StatelessWidget {
       body: Stack(
         children: [
           widget,
+
+
+          false ? 
           Positioned(
             child: Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
               color: Colors.black.withOpacity(0.3),
             ),
-          ),
+          ) : SizedBox(),
+
+          false ? 
           Positioned(
             child: Container(
               width: MediaQuery.of(context).size.width - 90,
@@ -103,7 +108,9 @@ class WrapedDrawer extends StatelessWidget {
                 ],
               ),
             ),
-          ),
+          ): SizedBox(),
+
+        
         ],
       ),
     );

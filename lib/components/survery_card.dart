@@ -1,4 +1,5 @@
 import 'package:coscape_mobile/components/measure_size.dart';
+import 'package:coscape_mobile/consts/colors.dart';
 import 'package:coscape_mobile/state/survey_controler.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -33,6 +34,7 @@ class SurveyCard extends StatelessWidget {
           color: Colors.white,
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
@@ -64,31 +66,6 @@ class SurveyCard extends StatelessWidget {
                         ),
                         SizedBox(height: 2),
                         Container(
-                          padding:
-                              EdgeInsets.symmetric(vertical: 2, horizontal: 6),
-                          decoration: BoxDecoration(
-                            color: Color(0xFF5d5fef),
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.access_time_outlined,
-                                color: Colors.white,
-                                size: 15,
-                              ),
-                              SizedBox(width: 2),
-                              Text(
-                                "2.1 min",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 10,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
                           width: 150,
                           child: Text(
                             "Delivery Express: Swift, Reliable Delivery",
@@ -113,16 +90,23 @@ class SurveyCard extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        SvgPicture.asset("assets/humbleicons_money.svg",
-                            height: 20),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text(
-                          "50 Da",
-                          style: TextStyle(
-                            color: Color(0xFF5d5fef),
-                          ),
+                         Row(
+                            children: [
+                              SvgPicture.asset(
+                                "assets/humbleicons_money.svg",
+                                height: 20,
+                              ),
+                              SizedBox(width: 5),
+                              Text(
+                                
+                                "2.1 min",
+                                textAlign: TextAlign.end,
+                                style: TextStyle(
+                                  color: AppColors.BlueColor,
+                                  fontSize: 10,
+                                ),
+                              ),
+                            ],
                         ),
                       ],
                     ),
@@ -132,7 +116,7 @@ class SurveyCard extends StatelessWidget {
                       },
                       child: Container(
                         padding:
-                            EdgeInsets.symmetric(vertical: 2, horizontal: 6),
+                            EdgeInsets.symmetric(vertical: 2, horizontal: 8),
                         child: Row(
                           children: [
                             Icon(
@@ -141,7 +125,7 @@ class SurveyCard extends StatelessWidget {
                               size: 20,
                             ),
                             Text(
-                              "Start Survey",
+                              "50 Da",
                               style:
                                   TextStyle(color: Colors.white, fontSize: 11),
                             ),

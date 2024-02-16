@@ -1,5 +1,6 @@
 import 'package:coscape_mobile/components/wraped_drawer.dart';
 import 'package:coscape_mobile/consts/routes.dart';
+import 'package:coscape_mobile/pages/done_page.dart';
 import 'package:coscape_mobile/pages/survey_page.dart';
 import 'package:coscape_mobile/pages/survey_questions_page.dart';
 import 'package:coscape_mobile/state/survey_controler.dart';
@@ -8,6 +9,7 @@ import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
 void main() {
+  Get.lazyPut(()=>SurveyControler());
   runApp(const MyApp());
 }
 
@@ -27,9 +29,11 @@ class MyApp extends StatelessWidget {
       routes: {
         Routes.surveys_page: (ctx) => WrapedDrawer(widget: SurveyPage()),
         Routes.survey_questions_page: (ctx) => SurveyQuestionsPage(),
+        Routes.done_page: (ctx) => DonePage(),
+        
       },
-      initialRoute: Routes.surveys_page,
-      home: WrapedDrawer(widget: SurveyPage()),
+      initialRoute: Routes.done_page,
+      home: WrapedDrawer(widget: DonePage()),
           
     );
   }

@@ -1,4 +1,4 @@
-import 'package:coscape_mobile/components/avaiable_and_filter.dart';
+import 'package:coscape_mobile/components/text_and_filter.dart';
 import 'package:coscape_mobile/components/custom_appbar.dart';
 import 'package:coscape_mobile/components/popup_card.dart';
 import 'package:coscape_mobile/components/survery_card.dart';
@@ -17,7 +17,6 @@ class SurveyPage extends StatelessWidget {
     return PopScope(
       canPop: false,
       child: Scaffold(
-        drawer: Drawer(),
         body: Stack(
           children: [
             Column(
@@ -45,7 +44,7 @@ class SurveyPage extends StatelessWidget {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        AvailableAndFilter(),
+                        TextAndFilter(text: "Available Today",),
                         SurveyCard(
                             on_details: survey_controler.view_survey_details,
                             on_start: survey_controler.start_survey),
