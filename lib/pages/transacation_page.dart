@@ -1,6 +1,9 @@
 import 'package:coscape_mobile/components/custom_appbar.dart';
 import 'package:coscape_mobile/components/personal_card_info.dart';
 import 'package:coscape_mobile/components/survery_card.dart';
+import 'package:coscape_mobile/components/survey_payment.dart';
+import 'package:coscape_mobile/components/text_and_filter.dart';
+import 'package:coscape_mobile/components/withdraw_card.dart';
 import 'package:coscape_mobile/consts/colors.dart';
 import 'package:coscape_mobile/consts/routes.dart';
 import 'package:flutter/material.dart';
@@ -37,12 +40,23 @@ class TransactionPage extends StatelessWidget {
           ),
           Expanded(
             child: SingleChildScrollView(
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 6),
-                child: Column(
-                  children: [
-                  ],
-                ),
+              child: Column(
+                children: [
+                  TextAndFilter(text: "Transaction History"),
+                  WithdrawCard(money: "50.0 da", date: "20.02.2023"),
+                  SurveyPayment(money: "50.0 da", date: "20.02.2023"),
+                  SurveyPayment(money: "50.0 da", date: "20.02.2023"),
+                  WithdrawCard(money: "50.0 da", date: "20.02.2023"),
+                  SurveyPayment(money: "50.0 da", date: "20.02.2023"),
+                 SurveyPayment(money: "50.0 da", date: "20.02.2023"),
+                  SurveyPayment(money: "50.0 da", date: "20.02.2023"),
+                  WithdrawCard(money: "50.0 da", date: "20.02.2023"),
+                  SurveyPayment(money: "50.0 da", date: "20.02.2023"),
+                 SurveyPayment(money: "50.0 da", date: "20.02.2023"),
+                  SurveyPayment(money: "50.0 da", date: "20.02.2023"),
+                  WithdrawCard(money: "50.0 da", date: "20.02.2023"),
+                  SurveyPayment(money: "50.0 da", date: "20.02.2023"),                                    
+                ],
               ),
             ),
           ),
@@ -51,4 +65,3 @@ class TransactionPage extends StatelessWidget {
     );
   }
 }
-
