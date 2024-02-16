@@ -1,6 +1,8 @@
 
+import 'package:coscape_mobile/state/survey_controler.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
@@ -26,9 +28,12 @@ class CustomAppBar extends StatelessWidget {
           children: [
             Row(
               children: [
-                SvgPicture.asset(
-                  "assets/mingcute_menu-fill.svg",
-                  width: 25,
+                GestureDetector(
+                  onTap: () {print("asdasdas"); },
+                  child: SvgPicture.asset(
+                    "assets/mingcute_menu-fill.svg",
+                    width: 25,
+                  ),
                 ),
                 SizedBox(
                   width: 20,

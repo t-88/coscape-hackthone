@@ -2,6 +2,7 @@ import 'package:coscape_mobile/components/checkbox_area.dart';
 import 'package:coscape_mobile/components/custom_appbar.dart';
 import 'package:coscape_mobile/components/progress_bar.dart';
 import 'package:coscape_mobile/components/rating_area.dart';
+import 'package:coscape_mobile/state/survey_controler.dart';
 import 'package:coscape_mobile/state/survey_questions_controler.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

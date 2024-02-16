@@ -17,6 +17,7 @@ class SurveyPage extends StatelessWidget {
     return PopScope(
       canPop: false,
       child: Scaffold(
+        drawer: Drawer(),
         body: Stack(
           children: [
             Column(
@@ -45,8 +46,12 @@ class SurveyPage extends StatelessWidget {
                     child: Column(
                       children: [
                         AvailableAndFilter(),
-                        SurveyCard(on_details: survey_controler.view_survey_details, on_start: survey_controler.start_survey),
-                        SurveyCard(on_details: survey_controler.view_survey_details, on_start: survey_controler.start_survey),
+                        SurveyCard(
+                            on_details: survey_controler.view_survey_details,
+                            on_start: survey_controler.start_survey),
+                        SurveyCard(
+                            on_details: survey_controler.view_survey_details,
+                            on_start: survey_controler.start_survey),
                       ],
                     ),
                   ),
