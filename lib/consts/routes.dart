@@ -5,5 +5,7 @@ class Routes  {
   static String profile_page = "/profile-page";
   static String my_money_page = "/my-money-page";
   static String transacation_page = "/transaction-page";
+  static String notification_page = "/notfication-page";
+  
   
 }
