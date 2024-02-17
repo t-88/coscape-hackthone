@@ -43,6 +43,11 @@ class DonePage extends StatelessWidget {
               ),
               Column(
                 children: [
+                  // fill the page with template data and date from the server
+
+                  SurveyCard( data: {"startup" : {}}, on_details: () {}, on_start: () {},),
+                  SurveyCard( data: {"startup" : {}}, on_details: () {}, on_start: () {},),
+                  SurveyCard( data: {"startup" : {}}, on_details: () {}, on_start: () {},),
                   ...survey_controler.done_surveys.value.map((survey_data) {
                     if (survey_data["startup"] != null) {
                       return SurveyCard(

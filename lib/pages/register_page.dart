@@ -103,7 +103,7 @@ class RegisterFinishUp extends StatelessWidget {
             children: [
               Obx( () =>  GradientButton(
                 enabled: register_controler.addr_contoler.value != "" && register_controler.phone_number_controler.value != "",
-                  callback: register_controler.finish_profile,
+                  callback: register_controler.finish_regestration,
                   widget: Center(
                     child: Text(
                       "Finish Profile!",
@@ -224,9 +224,7 @@ class RegisterFirstInfo extends StatelessWidget {
                     height: 50,
                     child: Checkbox(
                       value: false,
-                      onChanged: (val) {
-                        register_controler.terms_check_box(val ?? false);
-                      },
+                      onChanged: (val) {},
                     ),
                   ),
                   Expanded(
@@ -271,8 +269,7 @@ class RegisterFirstInfo extends StatelessWidget {
               SizedBox(height: 10),
               TextDevider(),
               SizedBox(height: 20),
-              CustomIconButton(
-                  callback: register_controler.register_with_google),
+              CustomIconButton( callback: () {}),
               SizedBox(height: 20),
               Center(
                 child: Row(
@@ -281,11 +278,11 @@ class RegisterFirstInfo extends StatelessWidget {
                     Text("Already have an account?"),
                     SizedBox(width: 4),
                     GestureDetector(
-                      onTap: register_controler.to_login,
+                      onTap: () {register_controler.to_login(); },
                       child: Text(
                         "Login",
                         style: TextStyle(
-                          color: Color(0xFFDF81F5),
+                          color: AppColors.BlueColor,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

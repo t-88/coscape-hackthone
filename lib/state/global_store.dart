@@ -11,11 +11,6 @@ class GlobalControler extends GetxController  {
   var user_id = "".obs;
   var token  = "".obs;
 
-  var email = "";
-  var phone_number = "";
-
-
-
   void store_token(_token) {
     token.value = _token;
     GetStorage box = GetStorage();
@@ -26,8 +21,6 @@ class GlobalControler extends GetxController  {
     GetStorage box = GetStorage();
     box.write("id",token.value);
   }
-
-
   void check_token_lifespan(token) async {
     final dio =  new Dio();
     dio.options.headers["authorization"] = token;

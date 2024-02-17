@@ -99,7 +99,6 @@ class WrapedDrawer extends StatelessWidget {
                                   key,
                                   SelectableTab(
                                     icon_path: val["icon_path"] as String,
-                                    // height: (val["height"] as int) * 1.0,
                                     title: val["title"] as String,
                                     selected:
                                         wraper_drawer_controler.selected_tab.value ==
@@ -121,7 +120,10 @@ class WrapedDrawer extends StatelessWidget {
                               height: 25,
                               title: "Logout",
                               selected: false,
-                              on_click: () {print("logout");},
+                              on_click: () {
+                                Get.toNamed(Routes.login_page);
+
+                              },
                             ),
                           ),
                         ),

@@ -1,1 +1,1 @@
-const IP_ADDR = "http://192.168.80.243:3001/graphql";
+const IP_ADDR = "http://192.168.80.243:3000/graphql";

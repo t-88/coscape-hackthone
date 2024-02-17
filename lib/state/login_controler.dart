@@ -2,7 +2,6 @@ import 'package:coscape_mobile/consts/routes.dart';
 import 'package:coscape_mobile/consts/server.dart';
 import 'package:coscape_mobile/state/global_store.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
@@ -13,7 +12,6 @@ class LoginControler extends GetxController {
   var username_section = true.obs;
 
   void login_with_google() {}
-
   void login() async {
     Map<String, dynamic> input = {
       "query": """mutation LoginUser(\$email: String, \$password: String) {
@@ -58,9 +56,7 @@ class LoginControler extends GetxController {
       Get.toNamed(Routes.surveys_page);
     }
   }
-
   void forgot_password() {}
-
   void to_register() {
     Get.toNamed(Routes.register_page);
   }

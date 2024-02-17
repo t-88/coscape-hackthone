@@ -11,18 +11,28 @@ class SurveyControler extends GetxController {
 
   var surveys = [].obs;
   var done_surveys = [].obs;
-
   var survey_details = {}.obs;
   int survey_idx = 0;
-
   var card_height = (100.0).obs;
-
   var is_loading_surveys = "loading".obs;
 
   @override
   void onInit() {
     super.onInit();
+    // load todays surveys
     request_list_of_surveys();
+  }
+
+
+  
+  void view_survey_details() {
+    show_survey_details.value = true;
+  }
+  void hide_survey_details() {
+    show_survey_details.value = false;
+  }
+  void set_card_height(Size size) {
+    card_height.value = size.height;
   }
 
   void request_list_of_surveys() async {
@@ -52,7 +62,6 @@ class SurveyControler extends GetxController {
           }
           """,
     };
-
     final response = await Dio().post(
       IP_ADDR,
       data: input,
@@ -62,10 +71,6 @@ class SurveyControler extends GetxController {
         },
       ),
     );
-
-
-
-    
 
     surveys.value = response.data["data"]["surveys"];
     // remove un-complete data
@@ -77,15 +82,6 @@ class SurveyControler extends GetxController {
 
     is_loading_surveys.value = "loaded";
   }
-
-  void view_survey_details() {
-    show_survey_details.value = true;
-  }
-
-  void hide_survey_details() {
-    show_survey_details.value = false;
-  }
-
   void start_survey(survey_data, idx) {
     survey_details.value = survey_data;
     survey_idx = idx;
@@ -95,11 +91,6 @@ class SurveyControler extends GetxController {
 
     Get.toNamed(Routes.survey_questions_page);
   }
-
-  void set_card_height(Size size) {
-    card_height.value = size.height;
-  }
-
   void mark_survey_done() {
     done_surveys.value.add(surveys.value[survey_idx]);
     surveys.value.removeAt(survey_idx);

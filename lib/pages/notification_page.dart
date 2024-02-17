@@ -41,6 +41,7 @@ class NotificationPage extends StatelessWidget {
               child: Column(
                 children: [
                   TextAndFilter(text: "Notification History",show_price:  false,),
+                  // fill the page with template data
                   NotificationCard(),                
                   NotificationCard(),                
                   NotificationCard(),                

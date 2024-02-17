@@ -14,22 +14,14 @@ class RegisterControler extends GetxController {
   var phone_number_controler = "".obs;
   var is_he_finishing_up = false.obs;
 
-  void register_with_google() {}
-
-  void to_login() {}
-
-  void terms_check_box(bool val) {}
-
+  void to_login() { Get.toNamed(Routes.login_page);}
   void date_popup(ctx) async {
-    DateTime? date = await showDatePicker(
-        context: ctx, firstDate: DateTime(1980), lastDate: DateTime(2100));
+    DateTime? date = await showDatePicker(context: ctx, firstDate: DateTime(1980), lastDate: DateTime(2100));
   }
-
   void register() {
     is_he_finishing_up.value = true;
   }
-
-  void finish_profile() async {
+  void finish_regestration() async {
     Map<String, dynamic> input = {
       "query": """mutation Mutation(\$user: userInput) {
         regUser(user: \$user) {
@@ -44,20 +36,13 @@ class RegisterControler extends GetxController {
       }""",
       "variables": {
         "user": {
-          "email":    email_controler.value,
-          "name":     first_name_controler.value + " " + last_name_controler.value,
+          "email": email_controler.value,
+          "name": first_name_controler.value + " " + last_name_controler.value,
           "password": password_controler.value,
-          "phone":    phone_number_controler.value
+          "phone": phone_number_controler.value
         }
       }
     };
-
-
-    print(email_controler.value);
-  print(first_name_controler.value + " " + last_name_controler.value);
-  print(password_controler.value);
-  print(phone_number_controler.value);
-
 
     final response = await Dio().post(
       IP_ADDR,
@@ -69,24 +54,19 @@ class RegisterControler extends GetxController {
       ),
     );
 
+    first_name_controler.value = "";
+    last_name_controler.value = "";
+    email_controler.value = "";
+    password_controler.value = "";
+    addr_contoler.value = "";
+    phone_number_controler.value = "";
 
-      first_name_controler.value = "";
-      last_name_controler.value = "";
-      email_controler.value = "";
-      password_controler.value = "";
-      addr_contoler.value = "";
-      phone_number_controler.value = "";
-
-    if(response.data["errors"] != null) {
+    if (response.data["errors"] != null) {
       is_he_finishing_up.value = false;
       Get.snackbar("Error", "Failed to register");
     } else {
-      Get.find<GlobalControler>().user_id.value =  response.data["data"]["regUser"]["user"]["_id"];
-      Get.find<GlobalControler>().token.value =  response.data["data"]["regUser"]["token"];
-      print(Get.find<GlobalControler>().user_id.value);
-      print(Get.find<GlobalControler>().token.value);
-
-      
+      Get.find<GlobalControler>().user_id.value = response.data["data"]["regUser"]["user"]["_id"];
+      Get.find<GlobalControler>().token.value = response.data["data"]["regUser"]["token"];
       Get.toNamed(Routes.surveys_page);
     }
   }

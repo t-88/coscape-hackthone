@@ -60,27 +60,12 @@ class SurveyCard extends StatelessWidget {
                         Text(
                           data["startup"]["name"] != null
                               ? data["startup"]["name"]
-                              :  "Unnamed",
+                              :  "Delivery",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 13,
                           ),
                         ),
-//                         Text(
-//                           data["startup"]["dateOfCreation"] != null
-//                               ?    
-// new DateTime.fromMicrosecondsSinceEpoch(data["startup"]["dateOfCreation"]).year.toString() + "/" 
-// //DateFormat('dd/MM/yyyy').format(DateTime.fromMillisecondsSinceEpoch(1653760800 *1000)).toString()
-//                                 // DateTime(  second : int.parse(data["startup"]["dateOfCreation"])).year.toString() + "-" 
-//                                 // DateTime( int.parse(data["startup"]["dateOfCreation"])).month.toString() + "-" +
-//                                 // DateTime( int.parse(data["startup"]["dateOfCreation"])).day.toString()
-//                                 // )
-//                               : "1999-09-09",
-//                           style: TextStyle(
-//                             color: Colors.grey,
-//                             fontSize: 12,
-//                           ),
-//                         ),
                         SizedBox(height: 2),
                         Container(
                           width: 150,
