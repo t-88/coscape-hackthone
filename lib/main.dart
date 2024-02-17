@@ -64,8 +64,8 @@ class MyApp extends StatelessWidget {
         Routes.login_page: (ctx) => LoginPage(),
         Routes.register_page: (ctx) => RegisterPage(),
       },
-      initialRoute: Routes.login_page,
-      home: LoginPage(),
+      initialRoute: Routes.surveys_page,
+      home: SurveyPage(),
     );
   }
 }
