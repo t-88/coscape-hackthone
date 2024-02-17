@@ -1,9 +1,9 @@
 
 import 'package:coscape_mobile/components/icon_text.dart';
 import 'package:coscape_mobile/consts/colors.dart';
-import 'package:coscape_mobile/pages/profile_page.dart';
+import 'package:coscape_mobile/consts/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
 class PesonalInfoCard extends StatelessWidget {
   const PesonalInfoCard({
@@ -37,9 +37,14 @@ class PesonalInfoCard extends StatelessWidget {
                   color: AppColors.BlueColor,
                 ),
               ),
-              Icon(
-                Icons.edit,
-                color: AppColors.BlueColor,
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed(Routes.setting_page);
+                },
+                child: Icon(
+                  Icons.edit,
+                  color: AppColors.BlueColor,
+                ),
               ),
             ],
           ),

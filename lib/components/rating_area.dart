@@ -75,24 +75,26 @@ class RatingArea extends StatelessWidget {
               )),
         ),
         SizedBox(height: 20),
-        Container(
-          width: MediaQuery.of(context).size.width - 100,
-          child: ElevatedButton(
-            onPressed: survey_questions_controler
-                        .cur_checkbox.value ==
-                    -1
-                ? null
-                : survey_questions_controler.submit_data,
-            child: Text(
-              "Submit!",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
+        Obx(
+          () =>  Container(
+            width: MediaQuery.of(context).size.width - 100,
+            child: ElevatedButton(
+              onPressed: survey_questions_controler
+                          .cur_rating.value ==
+                      -1
+                  ? null
+                  : survey_questions_controler.submit_data,
+              child: Text(
+                "Submit!",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
               ),
-            ),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.BlueColor,
-              foregroundColor: Colors.white,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.BlueColor,
+                foregroundColor: Colors.white,
+              ),
             ),
           ),
         ),

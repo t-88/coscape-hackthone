@@ -7,6 +7,10 @@ class Routes  {
   static String transacation_page = "/transaction-page";
   static String notification_page = "/notfication-page";
   static String setting_page = "/setting-page";
+
+
+  static String login_page = "/login-page";
+  static String register_page = "/register-page";
   
   
 }

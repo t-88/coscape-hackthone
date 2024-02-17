@@ -1,5 +1,3 @@
-
-
 import 'package:coscape_mobile/consts/colors.dart';
 import 'package:coscape_mobile/state/survey_questions_controler.dart';
 import 'package:flutter/material.dart';
@@ -30,16 +28,22 @@ class CheckboxArea extends StatelessWidget {
         SizedBox(height: 15),
         Obx(
           () => Column(
+            
             children: [
+              Text(survey_questions_controler.questions.value[survey_questions_controler.cur_progress.value]["question"],
+                style: TextStyle(
+          fontSize: 20,
+                ),
+              ),
               ...List.generate(
-                survey_questions_controler.max_questions.value,
+                survey_questions_controler.questions.value[survey_questions_controler.cur_progress.value]["choices"].length,
                 (index) => Column(
                   children: [
                     CheckboxListTile(
                       title: Text(
-                          survey_questions_controler.questions.value[index]),
-                      value: survey_questions_controler.cur_checkbox.value ==
-                          index,
+                        survey_questions_controler.questions.value[survey_questions_controler.cur_progress.value]["choices"][index],
+                      ),
+                      value: survey_questions_controler.cur_checkbox.value == index,
                       onChanged: (val) =>
                           survey_questions_controler.checkbox_selected(index),
                       controlAffinity: ListTileControlAffinity.leading,

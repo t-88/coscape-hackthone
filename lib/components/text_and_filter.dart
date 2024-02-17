@@ -5,7 +5,7 @@ class TextAndFilter extends StatelessWidget {
   TextAndFilter({
     super.key,
     required this.text,
-    this.show_date = true,
+    this.show_date = false,
     this.show_price = true,
   });
 
@@ -30,8 +30,8 @@ class TextAndFilter extends StatelessWidget {
               fontSize: 17,
             ),
           ),
-          show_price ?  CustomDropDownMenu(values : ["Prices","A","B","C"]) : SizedBox(),
-          show_date ? CustomDropDownMenu(values : ["Date","A","B","C"]) : SizedBox(),
+          if (show_price)  CustomDropDownMenu(values : ["Prices"]),
+          if (show_date)  CustomDropDownMenu(values : ["Date","3 Days","7 Days","2 Weeks"])
         ],
       ),
     );

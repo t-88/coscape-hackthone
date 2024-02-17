@@ -34,7 +34,7 @@ class CardInfo extends StatelessWidget {
                   ),
                   SizedBox(width: 10),
                   Text(
-                    "Show card details",
+                    "Edit card details",
                     style: TextStyle(
                       fontSize: 12,
                       color: AppColors.BlueColor,

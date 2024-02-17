@@ -15,7 +15,7 @@ class EditProfileImg extends StatelessWidget {
         SizedBox(height: 20),
         Container(
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,

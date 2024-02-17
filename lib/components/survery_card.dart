@@ -12,12 +12,19 @@ class SurveyCard extends StatelessWidget {
     super.key,
     required this.on_details,
     required this.on_start,
+    required this.data,
   });
+
+  final data;
+
+  final survey_controler = Get.find<SurveyControler>();
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        survey_controler.survey_details.value = data;
+
         on_details();
       },
       child: Container(
@@ -51,24 +58,36 @@ class SurveyCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Delivery Express",
+                          data["startup"]["name"] != null
+                              ? data["startup"]["name"]
+                              :  "Unnamed",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 13,
                           ),
                         ),
-                        Text(
-                          "Delivery company",
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 12,
-                          ),
-                        ),
+//                         Text(
+//                           data["startup"]["dateOfCreation"] != null
+//                               ?    
+// new DateTime.fromMicrosecondsSinceEpoch(data["startup"]["dateOfCreation"]).year.toString() + "/" 
+// //DateFormat('dd/MM/yyyy').format(DateTime.fromMillisecondsSinceEpoch(1653760800 *1000)).toString()
+//                                 // DateTime(  second : int.parse(data["startup"]["dateOfCreation"])).year.toString() + "-" 
+//                                 // DateTime( int.parse(data["startup"]["dateOfCreation"])).month.toString() + "-" +
+//                                 // DateTime( int.parse(data["startup"]["dateOfCreation"])).day.toString()
+//                                 // )
+//                               : "1999-09-09",
+//                           style: TextStyle(
+//                             color: Colors.grey,
+//                             fontSize: 12,
+//                           ),
+//                         ),
                         SizedBox(height: 2),
                         Container(
                           width: 150,
                           child: Text(
-                            "Delivery Express: Swift, Reliable Delivery",
+                            data["startup"]["shortDesc"] != null
+                                ?  data["startup"]["shortDesc"]
+                                : "Delivery Express: Swift, Reliable Delivery",
                             style: TextStyle(
                               color: Colors.grey,
                               fontSize: 11,
@@ -98,7 +117,10 @@ class SurveyCard extends StatelessWidget {
                             ),
                             SizedBox(width: 5),
                             Text(
-                              "2.1 min",
+                              data["startup"]["eta"] != null
+                                  ? data["startup"]["eta"]
+                                  : 
+                                  "5 min",
                               textAlign: TextAlign.end,
                               style: TextStyle(
                                 color: AppColors.BlueColor,
@@ -124,7 +146,10 @@ class SurveyCard extends StatelessWidget {
                               size: 20,
                             ),
                             Text(
-                              "50 Da",
+                              data["startup"]["reward"] != null
+                                  ? data["startup"]["reward"]: 
+                                  
+                                  "50 Da",
                               style:
                                   TextStyle(color: Colors.white, fontSize: 11),
                             ),

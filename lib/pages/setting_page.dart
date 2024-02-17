@@ -1,8 +1,6 @@
 import 'package:coscape_mobile/components/custom_appbar.dart';
-import 'package:coscape_mobile/components/custom_drop_down_menu.dart';
 import 'package:coscape_mobile/components/edit_profile_img.dart';
 import 'package:coscape_mobile/components/input_box_with_dropdown_menu.dart';
-import 'package:coscape_mobile/components/notification_card.dart';
 import 'package:coscape_mobile/components/setting_input_box.dart';
 import 'package:coscape_mobile/components/text_and_filter.dart';
 import 'package:coscape_mobile/consts/colors.dart';
@@ -50,14 +48,21 @@ class SettingPage extends StatelessWidget {
                   SizedBox(height: 20),
                   SettingInputBox(
                     hint: "What's your first name?",
+                    on_change: () {},
                   ),
                   SettingInputBox(
                     hint: "What's your Last name?",
+                    on_change: () {},
                   ),
                   SettingInputBox(
                     hint: "What's your Current Address?",
+                    on_change: () {},
                   ),
-                  SettingInputBox(hint: "Phone number", is_number: true),
+                  SettingInputBox(
+                    hint: "Phone number",
+                    is_number: true,
+                    on_change: () {},
+                  ),
                   InputboxWithDropdownMenu(),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),

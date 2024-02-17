@@ -1,5 +1,6 @@
 import 'package:coscape_mobile/consts/routes.dart';
 import 'package:coscape_mobile/state/survey_controler.dart';
+import 'package:coscape_mobile/state/wraper_drawer_controler.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -31,7 +32,7 @@ class CustomAppBar extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    print("asdasdas");
+                    Get.find<WraperDrawerControler>().show_drawer.value = true;
                   },
                   child: SvgPicture.asset(
                     "assets/mingcute_menu-fill.svg",

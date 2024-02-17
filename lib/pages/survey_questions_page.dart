@@ -2,7 +2,6 @@ import 'package:coscape_mobile/components/checkbox_area.dart';
 import 'package:coscape_mobile/components/custom_appbar.dart';
 import 'package:coscape_mobile/components/progress_bar.dart';
 import 'package:coscape_mobile/components/rating_area.dart';
-import 'package:coscape_mobile/state/survey_controler.dart';
 import 'package:coscape_mobile/state/survey_questions_controler.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -11,7 +10,8 @@ import 'package:get/get.dart';
 class SurveyQuestionsPage extends StatelessWidget {
   SurveyQuestionsPage({super.key});
 
-  final survey_questions_controler = Get.put(SurveyQuestionsControler());
+
+  final survey_questions_controler = Get.find<SurveyQuestionsControler>();
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class SurveyQuestionsPage extends StatelessWidget {
                 ),
                 SizedBox(width: 10),
                 Text(
-                  "Express Delivery",
+                  "Survey Questions",
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -43,7 +43,7 @@ class SurveyQuestionsPage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Obx(() => survey_questions_controler.cur_progress != 0
+                Obx(() => survey_questions_controler.cur_progress != 1
                     ? GestureDetector(
                         onTap: survey_questions_controler
                             .back_to_preveiws_question,
@@ -91,7 +91,10 @@ class SurveyQuestionsPage extends StatelessWidget {
                 children: [
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: Image.asset("assets/Video_player.png"),
+                    child: Image.asset(
+                      "assets/Video_player.png",
+                      width: 300,
+                    ),
                   ),
                   SizedBox(height: 20),
                   Obx(
@@ -102,7 +105,7 @@ class SurveyQuestionsPage extends StatelessWidget {
                                 survey_questions_controler,
                           )
                         : Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            padding: EdgeInsets.symmetric(horizontal: 10),
                             child: RatingArea(
                               survey_questions_controler:
                                   survey_questions_controler,

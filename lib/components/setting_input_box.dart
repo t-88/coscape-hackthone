@@ -4,12 +4,16 @@ import 'package:flutter/widgets.dart';
 class SettingInputBox extends StatelessWidget {
   SettingInputBox({
     super.key,
+    required this.on_change,
     required this.hint,
     this.is_number = false,
   });
 
   final String hint;
+  final Function on_change;
+  
   bool is_number;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +23,11 @@ class SettingInputBox extends StatelessWidget {
       decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
-            BoxShadow(blurRadius: 2, color: Colors.grey.withOpacity(0.5)),
+            BoxShadow(blurRadius: 2, color: Colors.grey.withOpacity(0.5),),
           ],
           borderRadius: BorderRadius.circular(5)),
       child: TextField(
+        onChanged: (value) {on_change(value); },
         keyboardType: is_number ? TextInputType.number : TextInputType.name,
         decoration: InputDecoration(
           hintText: hint,
